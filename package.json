@@ -4,7 +4,7 @@
   "keywords": [
     "requiry"
   ],
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "requiry.js",
   "homepage": "http://github.com/zerious/requiry",
   "repository": "http://github.com/zerious/requiry.git",
@@ -37,9 +37,12 @@
     "report": "open coverage/lcov-report/index.html",
     "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
-  "dependencies": {},
+  "dependencies": {
+    "execSync": "0.0.4",
+    "plans": "0.0.0"
+  },
   "devDependencies": {
-    "zeriousify": "0.1.4",
+    "zeriousify": "0.1.6",
     "assert-plus": "0.1.5",
     "mocha": "1.18.2",
     "istanbul": "0.2.9",
