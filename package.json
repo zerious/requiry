@@ -38,8 +38,7 @@
     "coveralls": "istanbul cover ./node_modules/exam/exam.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
   "dependencies": {
-    "execSync": "0.0.4",
-    "plans": "0.0.0"
+    "execSync": "0.0.4"
   },
   "devDependencies": {
     "zeriousify": "0.1.9",
