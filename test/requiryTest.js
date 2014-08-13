@@ -1,6 +1,5 @@
 var fs = require('fs');
 var Module = require('module');
-var assert = require('assert-plus');
 var sh = require('execSync');
 var cwd = process.cwd();
 
@@ -22,7 +21,7 @@ describe('API', function () {
     process.env.NODE_ENV = 'prod';
     var requiry = require('../requiry');
     requiry.enable();
-    assert.equal(Module._load.toString().indexOf('MODULE_NOT_FOUND'), -1);
+    is.notIn('MODULE_NOT_FOUND', Module._load.toString());
   });
 
   it('installs packages in dev environments', function (done) {
@@ -35,7 +34,7 @@ describe('API', function () {
       warn: doNothing,
       log: doNothing
     });
-    assert.ok(Module._load.toString().indexOf('MODULE_NOT_FOUND') > -1);
+    is.in('MODULE_NOT_FOUND', Module._load.toString());
     var plans = require('plans');
     sh.exec('rm -rf node_modules/plans');
     var json = require('../package.json');
