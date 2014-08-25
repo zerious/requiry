@@ -25,6 +25,7 @@ describe('API', function () {
   });
 
   it('installs packages in dev environments', function (done) {
+    this.timeout(5e3);
     clearRequireCache();
     process.env.NODE_ENV = 'dev';
     var requiry = require('../requiry');
