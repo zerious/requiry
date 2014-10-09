@@ -21,7 +21,7 @@ describe('API', function () {
     process.env.NODE_ENV = 'prod';
     var requiry = require('../requiry');
     requiry.enable();
-    is.notIn('MODULE_NOT_FOUND', Module._load.toString());
+    is.notIn(Module._load.toString(), 'MODULE_NOT_FOUND');
   });
 
   it('installs packages in dev environments', function (done) {
@@ -35,7 +35,7 @@ describe('API', function () {
       warn: doNothing,
       log: doNothing
     });
-    is.in('MODULE_NOT_FOUND', Module._load.toString());
+    is.in(Module._load.toString(), 'MODULE_NOT_FOUND');
     var plans = require('plans');
     sh.exec('rm -rf node_modules/plans');
     var json = require('../package.json');
